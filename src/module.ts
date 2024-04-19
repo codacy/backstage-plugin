@@ -6,7 +6,6 @@ import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-no
 import {
   AddRepoToCodacyAction,
 } from './actions/codacy';
-//import { ScmIntegrations } from '@backstage/integration';
 
 export const scaffolderModuleCodacy = createBackendModule({
   pluginId: 'scaffolder',
@@ -19,7 +18,6 @@ export const scaffolderModuleCodacy = createBackendModule({
       },
       async init({ logger, scaffolder, config }) {
         logger.info('Registering AddRepoToCodacyAction');
-        //const integrations = ScmIntegrations.fromConfig(config);
         scaffolder.addActions(AddRepoToCodacyAction({ config }))
       },
     });
